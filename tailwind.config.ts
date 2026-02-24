@@ -8,6 +8,8 @@ const config: Config = {
   ],
   theme: {
     screens: {
+      // ── Mobile ──────────────────────────────────────────────────
+      sm:  "640px",   // iPhone 6/7/8 / Galaxy S5  (640×1136)
       // ── Tablet ──────────────────────────────────────────────────
       md:  "768px",   // iPad Mini / iPad Air portrait  (768×1024)
       lg:  "1024px",  // iPad Pro / laptop 13"          (1024×1366)

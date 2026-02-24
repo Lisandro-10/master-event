@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { combos, Combo } from "@/data/index";
+import { combos } from "@/data/index";
+import type { Combo } from "@/data/types";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
