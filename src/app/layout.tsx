@@ -76,7 +76,7 @@ export const metadata: Metadata = {
       "Alquiler de equipos Pioneer DJ, sonido Wharfedale Pro, iluminación DMX y pantalla LED. Producción técnica integral para eventos en Mendoza.",
     images: [
       {
-        url: "/logo-resize.png",
+        url: "/logo-full-resize.png",
         width: 1200,
         height: 630,
         alt: "Master Event Mendoza — Más que música, una experiencia inolvidable",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     title: "Master Event | Sonido, DJ y Luces para Eventos en Mendoza",
     description:
       "Producción técnica integral en Mendoza. Pioneer CDJ-3000, Wharfedale Pro, luces DMX y pantalla LED para tu evento.",
-    images: ["/logo-resize.png"],
+    images: ["/logo-full-resize.png"],
   },
 
   robots: {
