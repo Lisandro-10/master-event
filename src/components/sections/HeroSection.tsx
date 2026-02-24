@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 export const HeroSection: React.FC = () => {
@@ -50,30 +49,6 @@ export const HeroSection: React.FC = () => {
             Contactanos
           </Button>
         </div>
-
-        {/* Stats strip */}
-        <div className="flex items-center gap-6 md:gap-10 mt-8 pt-8 border-t border-light/10 w-full justify-center">
-          {[
-            { value: "32-bit", label: "Resolución" },
-            { value: "900W+", label: "Potencia pico" },
-            { value: "6m²", label: "Pantalla LED" },
-          ].map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center gap-1">
-              <span className="text-xl md:text-2xl font-black text-primary">
-                {stat.value}
-              </span>
-              <span className="text-[10px] text-light/40 uppercase tracking-widest">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <div className="w-px h-8 bg-gradient-to-b from-primary/60 to-transparent" />
-        <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
       </div>
     </section>
   );
