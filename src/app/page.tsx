@@ -132,10 +132,10 @@ export default function ComingSoonPage() {
           {/* Contact & Social */}
           <div className="anim-fade-up delay-5 flex flex-col items-center gap-4">
             <a
-              href="tel:+5493516813717"
+              href="tel:+5492617523497"
               className="text-primary/80 hover:text-primary text-sm font-semibold tracking-wide transition-colors"
             >
-              +54 9 351 681 3717
+              +54 9 261 752 3497
             </a>
             {/* <div className="flex items-center gap-3">
               {[
