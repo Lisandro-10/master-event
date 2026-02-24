@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 // ─── Waveform Bars ───────────────────────────────────────────────────────────
 const BARS = [
   { h: 18, delay: "0s" }, { h: 32, delay: "0.1s" }, { h: 48, delay: "0.2s" },
