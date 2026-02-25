@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
-  { label: "Hero", href: "#hero" },
   { label: "Combos", href: "#combos" },
   { label: "Quiénes Somos", href: "#about" },
   { label: "Eventos", href: "#events" },
@@ -43,8 +42,8 @@ export const Navbar: React.FC = () => {
             <Image
               src="/logo.png"
               alt="Master Event"
-              width={36}
-              height={36}
+              width={64}
+              height={64}
               className="object-contain"
             />
             <span className="text-light font-bold text-sm tracking-wider hidden md:block">
@@ -68,7 +67,7 @@ export const Navbar: React.FC = () => {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Button size="sm" href="#contact">
-              Reserve Now ↗
+              Haz tu consulta!
             </Button>
           </div>
 
@@ -122,7 +121,7 @@ export const Navbar: React.FC = () => {
             className="mt-4"
             onClick={() => setMenuOpen(false)}
           >
-            Reserve Now ↗
+            Haz tu consulta!
           </Button>
         </nav>
       </div>
