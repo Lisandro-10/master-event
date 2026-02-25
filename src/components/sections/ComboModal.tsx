@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import type { Combo } from "@/data/types";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 
 interface ComboModalProps {
   combo: Combo | null;
@@ -44,7 +43,7 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
 
       {/* Modal */}
       <div
-        className="relative w-full max-w-lg bg-secondary rounded-2xl border border-light/10 overflow-hidden shadow-2xl"
+        className="relative w-full max-w-lg md:max-w-2xl lg:max-w-3xl bg-secondary rounded-2xl border border-light/10 overflow-hidden shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Image / gradient header */}
@@ -94,7 +93,7 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
         </div>
 
         {/* Content */}
-        <div className="p-4 md:p-6 max-h-64 overflow-y-auto">
+        <div className="p-4 md:p-6 max-h-64 md:max-h-[70vh] overflow-y-auto">
           {tab === "equipment" ? (
             <div className="flex flex-col gap-3">
               {combo.equipment.map((item, i) => (
@@ -134,13 +133,6 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
               ))}
             </div>
           )}
-        </div>
-
-        {/* Footer */}
-        <div className="p-4 md:p-6 pt-0 border-t border-light/5 mt-2">
-          <Button href="#contact" className="w-full" onClick={onClose}>
-            Reservar este Combo →
-          </Button>
         </div>
       </div>
     </div>

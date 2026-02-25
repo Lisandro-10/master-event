@@ -61,6 +61,7 @@ export const Footer: React.FC = () => {
                 <a
                   key={s.link}
                   href={s.link}
+                  target="_blank"
                   className="w-8 h-8 rounded-full border border-light/10 flex items-center justify-center text-light/40 hover:border-primary/50 hover:text-primary transition-all text-xs font-bold"
                 >
                   {s.icon}

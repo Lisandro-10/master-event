@@ -33,14 +33,16 @@ export const AboutSection: React.FC = () => {
                 <div className="w-12 h-12 rounded-full border-2 border-primary/40 flex items-center justify-center">
                   <span className="text-primary text-xl">◈</span>
                 </div>
+                {/* ✅ FIX 1: "Techniccal" → "Technical" */}
                 <h3 className="text-light text-xl font-black uppercase leading-tight">
-                  Techniccal Team
+                  Technical Team
                 </h3>
                 <p className="text-light/40 text-xs uppercase tracking-widest">
                   Master Event
                 </p>
                 <div className="mt-auto flex items-center gap-2 text-primary text-sm font-semibold">
-                  <span>+54 9 351 681 3717</span>
+                  {/* ✅ FIX 2: teléfono incorrecto "+54 9 351 681 3717" → dato real del Footer */}
+                  <span>+54 9 2617 52-3497</span>
                 </div>
               </div>
               {/* Corner accent */}
@@ -50,7 +52,8 @@ export const AboutSection: React.FC = () => {
             {/* Floating stat */}
             <div className="absolute -bottom-4 -right-4 bg-primary text-dark rounded-xl px-4 py-2 shadow-lg">
               <p className="text-xs font-bold uppercase tracking-wider">Potencia</p>
-              <p className="text-xl font-black">3200W+</p>
+              {/* ✅ FIX 5: "3200W+" → "4200W+" (2×900 + 1400 + 2×500 = 4200W pico real) */}
+              <p className="text-xl font-black">4200W+</p>
             </div>
           </div>
 
@@ -66,14 +69,16 @@ export const AboutSection: React.FC = () => {
               En Master Event, entendemos que la técnica es el motor para la
               emoción. Somos especialistas en transformar espacios mediante la
               tecnología de punta y siempre enfocados en inspirar y hacer vibrar
-              cada muevo.
+              {/* ✅ FIX 3: "cada muevo" → "cada show" */}
+              cada show.
             </p>
             <p className="text-light/40 text-sm leading-relaxed">
               Trabajamos con las mejores marcas globales como{" "}
               <span className="text-primary font-semibold">Pioneer DJ</span>,{" "}
               <span className="text-primary font-semibold">AlphaTheta</span>,{" "}
               <span className="text-primary font-semibold">Wharfedale Pro</span> y{" "}
-              <span className="text-primary font-semibold">Shure</span>, para
+              {/* ✅ FIX 4: "Shure" → "Samsung" (marca real del sistema, Shure no aparece en el doc) */}
+              <span className="text-primary font-semibold">Samsung</span>, para
               asegurar que cada detalle sea de alta fidelidad.
             </p>
 
