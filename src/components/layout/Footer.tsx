@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { FaEnvelope, FaInstagram, FaPhone } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
+import { SiX } from "react-icons/si";
 
 const footerLinks = [
   { label: "Hero", href: "#hero" },
@@ -57,7 +58,7 @@ export const Footer: React.FC = () => {
         {/* Social */}
           <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-4">
-              {[{icon:"𝕏", link: ""}, {icon:<FaInstagram/>, link: "https://www.instagram.com/juan_ignacio_lemmo/"}, {icon: <FaThreads/>, link: "https://www.threads.com/@juan_ignacio_lemmo?xmt=AQF0zS1lWVRbleAoWjwQzYXwrXfjT3It5jfnfUtrHDWbZ_g"}].map((s) => (
+              {[{icon:<SiX/>, link: ""}, {icon:<FaInstagram/>, link: "https://www.instagram.com/juan_ignacio_lemmo/"}, {icon: <FaThreads/>, link: "https://www.threads.com/@juan_ignacio_lemmo?xmt=AQF0zS1lWVRbleAoWjwQzYXwrXfjT3It5jfnfUtrHDWbZ_g"}].map((s) => (
                 <a
                   key={s.link}
                   href={s.link}

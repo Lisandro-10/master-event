@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import type { Combo } from "@/data/types";
 import { Badge } from "@/components/ui/Badge";
+import { HiXMark } from "react-icons/hi2";
 
 interface ComboModalProps {
   combo: Combo | null;
@@ -92,7 +93,7 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
             onClick={onClose}
             className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark/60 backdrop-blur flex items-center justify-center text-light/60 hover:text-light transition-colors z-10"
           >
-            ✕
+            <HiXMark className="text-base" />
           </button>
         </div>
 
