@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { getCDNUrl } from "@/lib/cdn";
 
 const navLinks = [
   { label: "Combos", href: "#combos" },
@@ -40,7 +41,7 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2 z-10">
             <Image
-              src="/logo.png"
+              src={getCDNUrl("logo.png")}
               alt="Master Event"
               width={64}
               height={64}
@@ -67,7 +68,7 @@ export const Navbar: React.FC = () => {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Button size="sm" href="#contact">
-              Haz tu consulta!
+              Consúltanos
             </Button>
           </div>
 
@@ -121,7 +122,7 @@ export const Navbar: React.FC = () => {
             className="mt-4"
             onClick={() => setMenuOpen(false)}
           >
-            Haz tu consulta!
+            Consúltanos
           </Button>
         </nav>
       </div>
