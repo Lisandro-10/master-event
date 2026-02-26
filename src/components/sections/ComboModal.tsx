@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import type { Combo } from "@/data/types";
 import { Badge } from "@/components/ui/Badge";
 
@@ -11,6 +12,12 @@ interface ComboModalProps {
 
 export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
   const [tab, setTab] = useState<"equipment" | "specs">("equipment");
+  const [imgError, setImgError] = useState(false);
+
+  // Reset image error when combo changes
+  useEffect(() => {
+    setImgError(false);
+  }, [combo?.id]);
 
   // Close on Escape
   useEffect(() => {
@@ -33,6 +40,8 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
 
   if (!combo) return null;
 
+  const showImage = combo.image && !imgError;
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -48,8 +57,18 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
       >
         {/* Image / gradient header */}
         <div
-          className={`relative h-40 md:h-52 bg-gradient-to-br ${combo.imagePlaceholder} flex items-end p-4`}
+          className={`relative h-40 md:h-52 flex items-end p-4 ${!showImage ? `bg-gradient-to-br ${combo.imagePlaceholder}` : ""}`}
         >
+          {showImage && combo.image && (
+            <Image
+              src={combo.image}
+              alt={combo.title}
+              fill
+              className="object-cover"
+              onError={() => setImgError(true)}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          )}
           {/* Subtle grid pattern */}
           <div
             className="absolute inset-0 opacity-10"
@@ -59,7 +78,9 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
               backgroundSize: "30px 30px",
             }}
           />
-          <div className="relative flex flex-col gap-1">
+          {/* Overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
+          <div className="relative flex flex-col gap-1 z-10">
             <Badge variant="primary">{combo.badge}</Badge>
             <h2 className="text-light font-black text-lg md:text-xl leading-tight">
               {combo.subtitle}
@@ -69,7 +90,7 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark/60 backdrop-blur flex items-center justify-center text-light/60 hover:text-light transition-colors"
+            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark/60 backdrop-blur flex items-center justify-center text-light/60 hover:text-light transition-colors z-10"
           >
             ✕
           </button>

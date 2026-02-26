@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { combos } from "@/data/index";
 import type { Combo } from "@/data/types";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -11,27 +12,41 @@ import { ComboModal } from "@/components/sections/ComboModal";
 const ComboCard: React.FC<{ combo: Combo; onOpen: (c: Combo) => void }> = ({
   combo,
   onOpen,
-}) => (
-  <div className="group flex flex-col rounded-2xl overflow-hidden border border-light/10 bg-secondary hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(37,244,209,0.08)]">
-    {/* Image / gradient */}
-    <div
-      className={`relative h-44 md:h-52 bg-gradient-to-br ${combo.imagePlaceholder} overflow-hidden`}
-    >
-      {/* Grid pattern */}
+}) => {
+  const [imgError, setImgError] = useState(false);
+  const showImage = combo.image && !imgError;
+
+  return (
+    <div className="group flex flex-col rounded-2xl overflow-hidden border border-light/10 bg-secondary hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(37,244,209,0.08)]">
+      {/* Image / gradient */}
       <div
-        className="absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(37,244,209,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(37,244,209,0.5) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-        }}
-      />
-      {/* Glow on hover */}
-      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
-      <div className="absolute top-3 left-3">
-        <Badge variant="primary">{combo.badge}</Badge>
+        className={`relative h-44 md:h-52 overflow-hidden ${!showImage ? `bg-gradient-to-br ${combo.imagePlaceholder}` : ""}`}
+      >
+        {showImage && combo.image && (
+          <Image
+            src={combo.image}
+            alt={combo.title}
+            fill
+            className="object-cover"
+            onError={() => setImgError(true)}
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        )}
+        {/* Grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(37,244,209,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(37,244,209,0.5) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+        />
+        {/* Glow on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
+        <div className="absolute top-3 left-3 z-10">
+          <Badge variant="primary">{combo.badge}</Badge>
+        </div>
       </div>
-    </div>
 
     {/* Content */}
     <div className="flex flex-col flex-1 p-4 md:p-5 gap-3">
@@ -51,7 +66,8 @@ const ComboCard: React.FC<{ combo: Combo; onOpen: (c: Combo) => void }> = ({
       </Button>
     </div>
   </div>
-);
+  );
+};
 
 export const CombosSection: React.FC = () => {
   const [selectedCombo, setSelectedCombo] = useState<Combo | null>(null);

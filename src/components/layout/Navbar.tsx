@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { getCDNUrl } from "@/lib/cdn";
+import { getCDNUrl } from "@/app/api/lib/cdn";
 
 const navLinks = [
   { label: "Combos", href: "#combos" },

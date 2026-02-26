@@ -1,13 +1,13 @@
 import type { Combo, EventItem } from "@/data/types";
+import { getCDNUrl } from "@/app/api/lib/cdn";
 
 // Re-export types for convenience
 export type { Combo, ComboEquipment, ComboSpec, EventItem } from "@/data/types";
 
 // ─── Combos ──────────────────────────────────────────────────────────────────
 //
-// Convención de rutas de imagen → /public/images/combos/<id>.jpg
-// Colocar las imágenes en esa carpeta y descomentar la key `image`.
-// Mientras no existan, el componente usa `imagePlaceholder` (gradient CSS) como fallback.
+// Images are fetched from S3/CDN bucket.
+// Fallback: `imagePlaceholder` (CSS gradient) when image fails to load.
 
 export const combos: Combo[] = [
   {
@@ -18,7 +18,7 @@ export const combos: Combo[] = [
     description:
       "El estándar de oro de la industria. Sonido de alta fidelidad sin compromisos para los escenarios más grandes del mundo.",
     imagePlaceholder: "from-secondary to-dark-deeper",
-    // image: "/images/combos/premium-club.jpg",
+    image: getCDNUrl("combos/premium-club.webp"),
     equipment: [
       {
         name: "1x Pioneer DJM-V10",
@@ -53,7 +53,7 @@ export const combos: Combo[] = [
     description:
       "Potencia y claridad inigualable con Wharfedale Pro. Cobertura acústica perfecta para cualquier aforo de 100 a 200 personas.",
     imagePlaceholder: "from-dark-deeper to-secondary/50",
-    // image: "/images/combos/sonido-pro.jpg",
+    image: getCDNUrl("combos/sonido-pro.webp"),
     equipment: [
       {
         name: "2x TOURUS-AX15-MBT",
@@ -88,7 +88,7 @@ export const combos: Combo[] = [
     description:
       "La última tecnología para tu evento. Innovación y diseño al servicio de la creatividad más vanguardista con visuales LED de 6m².",
     imagePlaceholder: "from-primary/10 to-dark-deeper",
-    // image: "/images/combos/alphatheta.jpg",
+    image: getCDNUrl("combos/alphatheta.webp"),
     equipment: [
       {
         name: "1x Pioneer DJM-V10",
@@ -131,7 +131,7 @@ export const events: EventItem[] = [
     title: "Neon Summer Fest",
     description: "Festival al aire libre con sistema de sonido completo y pantalla LED.",
     imagePlaceholder: "from-primary/20 via-dark to-secondary",
-    // image: "/images/events/neon-fest.jpg",
+    image: getCDNUrl("events/neon-fest.webp"),
     span: "wide",
   },
   {
@@ -140,7 +140,7 @@ export const events: EventItem[] = [
     title: "Skyline Executive Event",
     description: "Producción integral para evento corporativo de alto nivel.",
     imagePlaceholder: "from-secondary via-dark-deeper to-primary/10",
-    // image: "/images/events/skyline.jpg",
+    image: getCDNUrl("events/skyline.webp"),
     span: "normal",
   },
   {
@@ -149,7 +149,7 @@ export const events: EventItem[] = [
     title: "Techno Warehouse Session",
     description: "Setup Pioneer V10 + CDJ3000 para noche de club underground.",
     imagePlaceholder: "from-dark-deeper to-dark",
-    // image: "/images/events/techno.jpg",
+    image: getCDNUrl("events/techno.webp"),
     span: "normal",
   },
   {
@@ -158,7 +158,7 @@ export const events: EventItem[] = [
     title: "Global Innovation Expo",
     description: "Sonido y visuales para exposición internacional.",
     imagePlaceholder: "from-secondary/80 to-dark-deeper",
-    // image: "/images/events/innovation.jpg",
+    image: getCDNUrl("events/innovation.webp"),
     span: "normal",
   },
   {
@@ -167,7 +167,7 @@ export const events: EventItem[] = [
     title: "Elite Birthday Celebration",
     description: "Experiencia sonora completa para celebración privada.",
     imagePlaceholder: "from-primary/15 to-secondary",
-    // image: "/images/events/birthday.jpg",
+    image: getCDNUrl("events/birthday.webp"),
     span: "normal",
   },
 ];
