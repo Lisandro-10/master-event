@@ -41,31 +41,30 @@ const ComboCard: React.FC<{ combo: Combo; onOpen: (c: Combo) => void }> = ({
             backgroundSize: "24px 24px",
           }}
         />
-        {/* Glow on hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
         <div className="absolute top-3 left-3 z-10">
           <Badge variant="primary">{combo.badge}</Badge>
         </div>
       </div>
 
-    {/* Content */}
-    <div className="flex flex-col flex-1 p-4 md:p-5 gap-3">
-      <h3 className="text-light font-bold text-base leading-tight">
-        {combo.title}
-      </h3>
-      <p className="text-light/50 text-sm leading-relaxed flex-1">
-        {combo.description}
-      </p>
-      <Button
-        variant="ghost"
-        size="sm"
-        className="self-start px-0 text-primary hover:text-primary/80"
-        onClick={() => onOpen(combo)}
-      >
-        Saber más →
-      </Button>
+      {/* Content */}
+      <div className="flex flex-col flex-1 p-4 md:p-5 gap-3">
+        <h3 className="text-light font-bold text-base leading-tight">
+          {combo.title}
+        </h3>
+        <p className="text-light/50 text-sm leading-relaxed flex-1">
+          {combo.description}
+        </p>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="self-start px-0 text-primary hover:text-primary/80"
+          onClick={() => onOpen(combo)}
+        >
+          Saber más →
+        </Button>
+      </div>
     </div>
-  </div>
   );
 };
 
@@ -90,8 +89,8 @@ export const CombosSection: React.FC = () => {
               </h2>
             </div>
             <p className="text-light/40 text-sm max-w-xs leading-relaxed md:text-right">
-              Configuraciones estándar para festivales, clubes y eventos
-              corporativos con la mejor tecnología del mercado.
+              Soluciones a medida para bodegas, casamientos, corporativos,
+              bares, pubs, cumpleaños y más.
             </p>
           </div>
 
