@@ -62,7 +62,8 @@ export const ContactSection: React.FC = () => {
             <span className="text-primary">Evento?</span>
           </h2>
           <p className="text-light/40 text-sm max-w-sm leading-relaxed">
-            Nuestro equipo técnico está listo para asesorarte en menos de 24 horas.
+            Nuestro equipo técnico está listo para asesorarte.
+            Servicio puerta a puerta e instalación in situ.
           </p>
         </div>
 
@@ -119,7 +120,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           <Button type="submit" size="lg" className="w-full mt-2" disabled={loading}>
-            {loading ? "Enviando..." : success ? "¡Mensaje enviado! ✓" : "Enviar Mensaje ↗"}
+            {loading ? "Enviando..." : success ? "¡Mensaje enviado!" : "Enviar Mensaje"}
           </Button>
         </form>
       </div>
