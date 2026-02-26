@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import { FaEnvelope, FaInstagram, FaPhone } from "react-icons/fa";
+import { FaThreads } from "react-icons/fa6";
 
 const footerLinks = [
   { label: "Hero", href: "#hero" },
@@ -35,7 +37,7 @@ export const Footer: React.FC = () => {
             inolvidables.
           </p>
           <p className="text-light/20 text-xs">
-            © 2024 MASTER EVENT. TODOS LOS DERECHOS RESERVADOS.
+            © 2026 MASTER EVENT. TODOS LOS DERECHOS RESERVADOS.
           </p>
         </div>
 
@@ -53,17 +55,30 @@ export const Footer: React.FC = () => {
         </nav>
 
         {/* Social */}
-        <div className="flex items-center gap-4">
-          {["𝕏", "ig", "in"].map((s) => (
-            <a
-              key={s}
-              href="#"
-              className="w-8 h-8 rounded-full border border-light/10 flex items-center justify-center text-light/40 hover:border-primary/50 hover:text-primary transition-all text-xs font-bold"
-            >
-              {s}
-            </a>
-          ))}
-        </div>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex items-center gap-4">
+              {[{icon:"𝕏", link: ""}, {icon:<FaInstagram/>, link: "https://www.instagram.com/juan_ignacio_lemmo/"}, {icon: <FaThreads/>, link: "https://www.threads.com/@juan_ignacio_lemmo?xmt=AQF0zS1lWVRbleAoWjwQzYXwrXfjT3It5jfnfUtrHDWbZ_g"}].map((s) => (
+                <a
+                  key={s.link}
+                  href={s.link}
+                  target="_blank"
+                  className="w-8 h-8 rounded-full border border-light/10 flex items-center justify-center text-light/40 hover:border-primary/50 hover:text-primary transition-all text-xs font-bold"
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+            <ul className="flex flex-col gap-1.5">
+              <li className="flex items-center gap-2">
+                <FaPhone className="text-light/40 hover:text-primary text-xs font-medium tracking-wider transition-colors duration-200"/>
+                <span className="text-light/40 hover:text-primary text-xs font-medium tracking-wider transition-colors duration-200">+54 9 2617 52-3497</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <FaEnvelope className="text-light/40 hover:text-primary text-xs font-medium tracking-wider transition-colors duration-200"/>
+                <span className="text-light/40 hover:text-primary text-xs font-medium tracking-wider transition-colors duration-200">lemmojuanignacio@gmail.com</span>
+              </li>
+            </ul>
+          </div>
       </div>
     </footer>
   );

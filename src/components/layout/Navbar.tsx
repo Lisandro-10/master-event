@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { getCDNUrl } from "@/app/api/lib/cdn";
 
 const navLinks = [
-  { label: "Hero", href: "#hero" },
   { label: "Combos", href: "#combos" },
   { label: "Quiénes Somos", href: "#about" },
   { label: "Eventos", href: "#events" },
@@ -41,10 +41,10 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2 z-10">
             <Image
-              src="/logo.png"
+              src={getCDNUrl("logo.png")}
               alt="Master Event"
-              width={36}
-              height={36}
+              width={64}
+              height={64}
               className="object-contain"
             />
             <span className="text-light font-bold text-sm tracking-wider hidden md:block">
@@ -68,7 +68,7 @@ export const Navbar: React.FC = () => {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Button size="sm" href="#contact">
-              Reserve Now ↗
+              Consúltanos
             </Button>
           </div>
 
@@ -122,7 +122,7 @@ export const Navbar: React.FC = () => {
             className="mt-4"
             onClick={() => setMenuOpen(false)}
           >
-            Reserve Now ↗
+            Consúltanos
           </Button>
         </nav>
       </div>

@@ -18,6 +18,13 @@ export interface Combo {
   subtitle: string;
   description: string;
   imagePlaceholder: string;
+  /**
+   * Ruta a la imagen del combo dentro de /public.
+   * Ejemplo: "/images/combos/premium-club.jpg"
+   * Mientras no haya imagen real, puede ser undefined — el componente
+   * mostrará el gradient imagePlaceholder como fallback.
+   */
+  image?: string;
   equipment: ComboEquipment[];
   specs: ComboSpec[];
 }
@@ -28,5 +35,7 @@ export interface EventItem {
   title: string;
   description: string;
   imagePlaceholder: string;
+  /** Ruta a imagen real en /public, ej: "/images/events/neon-fest.jpg" */
+  image?: string;
   span?: "wide" | "tall" | "normal";
 }
