@@ -5,7 +5,6 @@ import Image from "next/image";
 import { events } from "@/data/index";
 import type { EventItem } from "@/data/types";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Badge } from "@/components/ui/Badge";
 
 interface EventCardProps {
   event: EventItem;
@@ -59,9 +58,9 @@ const EventCard: React.FC<EventCardProps> = ({
       />
       <div className="absolute inset-0 bg-gradient-to-t from-dark-deeper/85 via-dark-deeper/20 to-transparent group-hover:from-dark-deeper/90 transition-all duration-300" />
       <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-1.5 z-10">
-        <Badge variant="dark">{event.type}</Badge>
+        {/* <Badge variant="dark">{event.type}</Badge> */}
         <h3 className={`text-light font-bold leading-tight ${titleClasses[titleSize]}`}>
-          {event.title}
+          {"{Nombre_evento}/{fecha_evento}"}
         </h3>
         {showDescription && (
           <p className="text-light/50 text-xs leading-relaxed line-clamp-2">
