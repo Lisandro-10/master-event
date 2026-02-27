@@ -5,7 +5,6 @@ import Image from "next/image";
 import { events } from "@/data/index";
 import type { EventItem } from "@/data/types";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Badge } from "@/components/ui/Badge";
 
 interface EventCardProps {
   event: EventItem;

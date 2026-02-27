@@ -1,8 +1,7 @@
 import React from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
-import Image from "next/image";
-import { getCDNUrl } from "@/app/api/lib/cdn";
+
 import {
   HiOutlineSpeakerWave,
   HiOutlineWrenchScrewdriver,
