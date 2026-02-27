@@ -101,11 +101,10 @@ export const AboutSection: React.FC = () => {
               ))}
             </div>
 
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex justify-center gap-3 mt-2">
               <Button href="#contact" size="md">
-                Trabajemos Juntos →
+                Trabajemos Juntos
               </Button>
-              <span className="text-light/30 text-xs">MASTER EVENT</span>
             </div>
           </div>
 
