@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
         {/* Social */}
           <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-4">
-              {[{icon:<SiX/>, link: ""}, {icon:<FaInstagram/>, link: "https://www.instagram.com/juan_ignacio_lemmo/"}, {icon: <FaThreads/>, link: "https://www.threads.com/@juan_ignacio_lemmo?xmt=AQF0zS1lWVRbleAoWjwQzYXwrXfjT3It5jfnfUtrHDWbZ_g"}].map((s) => (
+              {[{icon:<FaInstagram/>, link: "https://www.instagram.com/juan_ignacio_lemmo/"}, {icon: <FaThreads/>, link: "https://www.threads.com/@juan_ignacio_lemmo?xmt=AQF0zS1lWVRbleAoWjwQzYXwrXfjT3It5jfnfUtrHDWbZ_g"}].map((s) => (
                 <a
                   key={s.link}
                   href={s.link}

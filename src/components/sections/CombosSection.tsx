@@ -5,9 +5,10 @@ import Image from "next/image";
 import { combos } from "@/data/index";
 import type { Combo } from "@/data/types";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { ComboModal } from "@/components/sections/ComboModal";
+import { BsArrowRight } from "react-icons/bs";
+import { BiInfoCircle } from "react-icons/bi";
 
 const ComboCard: React.FC<{ combo: Combo; onOpen: (c: Combo) => void }> = ({
   combo,
@@ -42,9 +43,6 @@ const ComboCard: React.FC<{ combo: Combo; onOpen: (c: Combo) => void }> = ({
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
-        <div className="absolute top-3 left-3 z-10">
-          <Badge variant="primary">{combo.badge}</Badge>
-        </div>
       </div>
 
       {/* Content */}
@@ -61,7 +59,8 @@ const ComboCard: React.FC<{ combo: Combo; onOpen: (c: Combo) => void }> = ({
           className="self-start px-0 text-primary hover:text-primary/80"
           onClick={() => onOpen(combo)}
         >
-          Saber más →
+          Saber más
+          <BsArrowRight className="w-4 h-4" />
         </Button>
       </div>
     </div>
@@ -103,6 +102,10 @@ export const CombosSection: React.FC = () => {
                 onOpen={setSelectedCombo}
               />
             ))}
+          </div>
+          <div className="text-center text-primary/90 text-sm mt-8 px-4 py-2 rounded-md font-medium flex justify-center items-center gap-2">
+            <BiInfoCircle className="text-primary" size={32} />
+            <span>Todos los combos incluyen setup de luces sin ningún costo adicional.</span>
           </div>
         </div>
       </section>

@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import type { Combo } from "@/data/types";
-import { Badge } from "@/components/ui/Badge";
 import { HiXMark } from "react-icons/hi2";
 
 interface ComboModalProps {
@@ -82,7 +81,6 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
           {/* Overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
           <div className="relative flex flex-col gap-1 z-10">
-            <Badge variant="primary">{combo.badge}</Badge>
             <h2 className="text-light font-black text-lg md:text-xl leading-tight">
               {combo.subtitle}
             </h2>

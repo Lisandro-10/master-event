@@ -13,7 +13,6 @@ export interface ComboSpec {
 
 export interface Combo {
   id: string;
-  badge: string;
   title: string;
   subtitle: string;
   description: string;
@@ -31,11 +30,8 @@ export interface Combo {
 
 export interface EventItem {
   id: string;
-  type: string;
   title: string;
   description: string;
   imagePlaceholder: string;
-  /** Ruta a imagen real en /public, ej: "/images/events/neon-fest.jpg" */
   image?: string;
-  span?: "wide" | "tall" | "normal";
 }

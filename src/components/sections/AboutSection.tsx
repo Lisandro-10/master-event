@@ -40,24 +40,6 @@ export const AboutSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto">
         <div className="items-center">
-
-          {/* Left — visual card */}
-          {/* <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden border border-primary/20 bg-secondary">
-              <div className="relative p-8 md:p-10 flex flex-col gap-4 min-h-64">
-                <Image
-                  src={getCDNUrl("logo.png")}
-                  alt="Imagen Quienes Somos"
-                  width={400}
-                  height={400}
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-primary/30 rounded-tl-none rounded-br-2xl" />
-            </div>
-          </div> */}
-
-          {/* Right — text */}
           <div className="flex flex-col gap-6">
             <SectionLabel>Quiénes Somos</SectionLabel>
             <h2 className="text-3xl md:text-5xl font-black text-light uppercase leading-tight">
@@ -75,15 +57,16 @@ export const AboutSection: React.FC = () => {
             </p>
 
             <p className="text-light/40 text-sm lg:text-base leading-relaxed">
-              Cada detalle de la mezcla de{" "}
+              Cada detalle del evento se plasma en la mezcla de{" "}
               <span className="text-primary font-semibold">precisión digital de 32 bits</span>{" "}
-              (<span className="text-primary font-semibold">Pioneer DJ / AlphaTheta</span>) se escucha
+              (<span className="text-primary font-semibold">Pioneer DJ / AlphaTheta</span>) escuchando
               con potencia y claridad a través del sistema acústico{" "}
-              <span className="text-primary font-semibold">Wharfedale Pro</span>,
-              juego de luces{" "}
-              <span className="text-primary font-semibold">DMX 512</span>{" "}
-              y pantalla{" "}
-              <span className="text-primary font-semibold">LED de 6m²</span>.
+              <span className="text-primary font-semibold">Wharfedale Pro</span>. 
+              El componente visual integra tecnología {" "}
+              <span className="text-primary font-semibold">LED de gran formato (6m²)</span>{" "} 
+              con soporte hasta{" "} <span className="text-primary font-semibold">4K / FULL HD</span> y {" "}
+              <span className="text-primary font-semibold">juego de luces</span> programado por{" "}
+              <span className="text-primary font-semibold">DMX 512</span>.
             </p>
 
             {/* Features grid */}
