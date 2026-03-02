@@ -89,7 +89,7 @@ export const CombosSection: React.FC = () => {
             </div>
             <p className="text-light/40 text-sm max-w-xs leading-relaxed md:text-right">
               Soluciones a medida para bodegas, casamientos, corporativos,
-              bares, pubs, cumpleaños y más.
+              bares, bares, cumpleaños y más.
             </p>
           </div>
 

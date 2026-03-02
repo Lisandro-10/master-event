@@ -28,7 +28,7 @@ const features = [
   {
     Icon: HiOutlineSparkles,
     label: "Eventos a Medida",
-    desc: "Bodegas, casamientos, corporativos, pubs, cumpleaños y más",
+    desc: "Bodegas, casamientos, corporativos, bares, cumpleaños y más",
   },
 ];
 
@@ -65,7 +65,7 @@ export const AboutSection: React.FC = () => {
               El componente visual integra tecnología {" "}
               <span className="text-primary font-semibold">LED de gran formato (6m²)</span>{" "} 
               con soporte hasta{" "} <span className="text-primary font-semibold">4K / FULL HD</span> y {" "}
-              <span className="text-primary font-semibold">juego de luces</span> programado por{" "}
+              juego de luces programado por{" "}
               <span className="text-primary font-semibold">DMX 512</span>.
             </p>
 

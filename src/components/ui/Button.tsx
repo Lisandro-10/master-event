@@ -3,13 +3,25 @@ import React from "react";
 type ButtonVariant = "primary" | "outline" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type BaseProps = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   asChild?: boolean;
-  href?: string;
+  className?: string;
   children: React.ReactNode;
-}
+};
+
+type AnchorButtonProps = BaseProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    href: string;
+  };
+
+type NativeButtonProps = BaseProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    href?: undefined;
+  };
+
+type ButtonProps = AnchorButtonProps | NativeButtonProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
@@ -39,16 +51,23 @@ export const Button: React.FC<ButtonProps> = ({
 
   const classes = `${base} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
-  if (href) {
+  if (typeof href === "string") {
     return (
-      <a href={href} className={classes}>
+      <a
+        href={href}
+        className={classes}
+        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
         {children}
       </a>
     );
   }
 
   return (
-    <button className={classes} {...props}>
+    <button
+      className={classes}
+      {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+    >
       {children}
     </button>
   );
