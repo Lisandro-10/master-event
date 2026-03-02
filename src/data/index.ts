@@ -11,17 +11,16 @@ export type { Combo, ComboEquipment, ComboSpec, EventItem } from "@/data/types";
 
 export const combos: Combo[] = [
   {
-    id: "premium-club",
-    badge: "PRO",
-    title: "Combo Pioneer V10 + CDJ3000",
+    id: "setup-pioneer",
+    title: "Setup Pioneer",
     subtitle: "Premium Club Bundle",
     description:
       "El estándar de oro de la industria. Sonido de alta fidelidad sin compromisos para los escenarios más grandes del mundo.",
     imagePlaceholder: "from-secondary to-dark-deeper",
-    image: getCDNUrl("combos/premium-club.webp"),
+    image: getCDNUrl("combos/setup-pioneer.webp"),
     equipment: [
       {
-        name: "1x Pioneer DJM-V10",
+        name: "1x MIXER V10 LF",
         description:
           "Mezcladora profesional de 6 canales con EQ de 4 bandas, convertidores A/D-D/A de 32 bits y 96kHz de muestreo.",
       },
@@ -31,24 +30,23 @@ export const combos: Combo[] = [
           "Multireproductor profesional con pantalla táctil HD de 9\", MPU avanzada, Key Sync/Shift y Pro DJ Link Gigabit.",
       },
       {
-        name: "2x Wharfedale Pro TOURUS-AX15-MBT",
+        name: "1 RMX 1000",
         description:
-          "Altavoces bi-amplificados activos 15\", 900W pico, diseño fanless con diafragma de titanio 1.75\" y Bluetooth/TWS.",
+          "Estación de efectos profesional para DJ con procesamiento DSP de alta resolución, integración plug-in VST/AU y total compatibilidad con mixers y CDJ mediante conexión MIDI y USB.",
       },
     ],
-    specs: [
-      { label: "Audio Processing", value: "32-bit", sub: "96kHz" },
-      { label: "Max Output", value: "900W", sub: "Peak" },
-      { label: "Connectivity", value: "Pro Link", sub: "Gigabit" },
-      { label: "Control", value: "6-Ch", sub: "Mixer" },
-      { label: "SPL Máx", value: "130dB", sub: "Speakers" },
-      { label: "Pantalla CDJ", value: '9"', sub: "Touchscreen" },
-    ],
+      specs: [
+        { label: "Audio Resolution", value: "32-bit A/D & D/A", sub: "Mixer & Players" },
+        { label: "Sampling Rate", value: "96 kHz", sub: "Mixer Processing" },
+        { label: "Player Output Quality", value: "115 dB S/N", sub: "CDJ-3000" },
+        { label: "Effect Processing", value: "24-bit/48 kHz", sub: "RMX-1000 FX Unit" },
+        { label: "Channels / Control", value: "6-Ch", sub: "Mixer" },
+        { label: "Display", value: "9″ HD Touch", sub: "CDJ-3000" },
+      ],
   },
   {
     id: "sonido-pro",
-    badge: "FULL PRODUCTION",
-    title: "Sistema de Sonido Pro",
+    title: "Sonido PRO de alta fidelidad",
     subtitle: "Pro Sound System",
     description:
       "Potencia y claridad inigualable con Wharfedale Pro. Cobertura acústica perfecta para cualquier aforo de 100 a 200 personas.",
@@ -80,46 +78,30 @@ export const combos: Combo[] = [
       { label: "Cooling", value: "Fanless", sub: "Convection" },
     ],
   },
-  {
-    id: "alphatheta",
-    badge: "NEXT-GEN",
-    title: "Setup AlphaTheta Next-Gen",
-    subtitle: "Full Production Setup",
+{
+    id: "pantalla-led",
+    title: "PANTALLA LED 6M2",
+    subtitle: "Full Visual Production Setup",
     description:
-      "La última tecnología para tu evento. Innovación y diseño al servicio de la creatividad más vanguardista con visuales LED de 6m².",
+      "Pantalla LED de alta definición de 6 m² con pixel pitch 3.91 mm, elevadas tasas de refresco para imágenes fluidas, diseño modular y resistencia IP65 para usos en interiores y exteriores.",
     imagePlaceholder: "from-primary/10 to-dark-deeper",
     image: getCDNUrl("combos/alphatheta.webp"),
     equipment: [
       {
-        name: "1x Pioneer DJM-V10",
-        description:
-          "Mezcladora de 6 canales con EQ de 4 bandas, Beat FX, velocidad de muestreo de 96kHz y 32 bits.",
-      },
-      {
-        name: "2x CDJ-3000",
-        description:
-          "Multireproductor avanzado con Key Sync, Touch Preview, Stacked Waveform y Pro DJ Link Gigabit Ethernet.",
-      },
-      {
-        name: "1x RMX-1000",
-        description:
-          "Sistema 3 en 1 de efectos y sampler: Scene FX, Isolator FX y X-Pad con Pitch Shift. Peso: 1.3kg.",
-      },
-      {
         name: "Pantalla LED 6m²",
         description:
-          "12 módulos, pixel pitch 3.91mm, protección IP65, tasa de refresco 1920-7860Hz, resolución HD/Full HD/4K.",
+          "Display LED modular de 6 metros cuadrados con pixel pitch 3.91 mm, paneles SMD de alta densidad, protección IP65 para exteriores, alto brillo y compatibilidad con diversas fuentes de video.",
       },
     ],
     specs: [
-      { label: "Visual", value: "6m²", sub: "LED Screen" },
-      { label: "Pixel Pitch", value: "3.91mm", sub: "IP65" },
-      { label: "Refresh", value: "7860Hz", sub: "Anti-flicker" },
-      { label: "Resolution", value: "4K", sub: "Large format" },
-      { label: "Lighting", value: "DMX 512", sub: "Controller" },
-      { label: "Fixtures", value: "8", sub: "Accesorios" },
+      { label: "Pixel Pitch", value: "3.91 mm", sub: "Density ~65 536 px/m²" },
+      { label: "Refresh Rate", value: "≥3 840 Hz", sub: "Flicker-free display" },
+      { label: "Brightness", value: "≥5 000 nits", sub: "Outdoor ready" },
+      { label: "Viewing Angle", value: "140°/140°", sub: "H/V" },
+      { label: "Ingress Protection", value: "IP65", sub: "Front/Outdoor" },
+      { label: "Lifetime", value: "≥100 000 h", sub: "LED lifespan" },
     ],
-  },
+  }
 ];
 
 // ─── Events ──────────────────────────────────────────────────────────────────
@@ -127,29 +109,30 @@ export const combos: Combo[] = [
 export const events: EventItem[] = [
   {
     id: "neon-fest",
-    type: "Live Event",
     title: "Neon Summer Fest",
     description: "Festival al aire libre con sistema de sonido completo y pantalla LED.",
     imagePlaceholder: "from-primary/20 via-dark to-secondary",
     image: getCDNUrl("eventos/evento-1/evento-1_1.webp"),
-    span: "normal",
   },
   {
     id: "skyline",
-    type: "Corporate",
     title: "Skyline Executive Event",
     description: "Producción integral para evento corporativo de alto nivel.",
     imagePlaceholder: "from-secondary via-dark-deeper to-primary/10",
     image: getCDNUrl("eventos/evento-2/evento-2_1.webp"),
-    span: "normal",
   },
   {
     id: "techno",
-    type: "Club Night",
     title: "Techno Warehouse Session",
     description: "Setup Pioneer V10 + CDJ3000 para noche de club underground.",
     imagePlaceholder: "from-dark-deeper to-dark",
     image: getCDNUrl("eventos/evento-3/evento-3_1.webp"),
-    span: "normal",
+  },
+  {
+    id: "tuki",
+    title: "Tuki Event",
+    description: "Evento especial con setups premium.",
+    imagePlaceholder: "from-dark-deeper to-dark",
+    image: getCDNUrl("eventos/evento-4/evento-4_1.webp"),
   },
 ];

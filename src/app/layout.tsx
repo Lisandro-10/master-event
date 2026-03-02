@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -118,6 +119,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <FloatingWhatsApp phoneNumber="5492617523497"/>
       </body>
     </html>
   );

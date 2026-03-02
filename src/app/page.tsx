@@ -12,8 +12,8 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <CombosSection />
         <AboutSection />
+        <CombosSection />
         <EventsSection />
         <ContactSection />
       </main>
