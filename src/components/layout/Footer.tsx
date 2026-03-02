@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
             Especialistas en la creación de experiencias sonoras y visuales
             inolvidables.
           </p>
-          <p className="text-light/20 text-xs">
+          <p className="text-light/20 text-xs text-center">
             © 2026 MASTER EVENT. TODOS LOS DERECHOS RESERVADOS.
           </p>
         </div>
