@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { FaEnvelope, FaInstagram, FaPhone } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
-import { SiX } from "react-icons/si";
 
 const footerLinks = [
   { label: "Hero", href: "#hero" },
