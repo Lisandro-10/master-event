@@ -6,7 +6,7 @@ import { combos } from "@/data/index";
 import type { Combo } from "@/data/types";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
-import { ComboModal } from "@/components/sections/ComboModal";
+import { ComboModal } from "@/components/modals/ComboModal";
 import { BsArrowRight } from "react-icons/bs";
 import { BiInfoCircle } from "react-icons/bi";
 
