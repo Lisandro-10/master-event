@@ -41,7 +41,7 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2 z-10">
+          <a href="#hero" className="flex flex-col items-center gap-2 z-10">
             <Image
               src={logoUrl}
               alt="Master Event"
@@ -50,7 +50,7 @@ export const Navbar: React.FC = () => {
               height={64}
               className="object-contain"
             />
-            <span className="text-light font-bold text-sm tracking-wider hidden md:block">
+            <span className="text-light font-bold text-sm tracking-wider">
               MasterEvent
             </span>
           </a>
