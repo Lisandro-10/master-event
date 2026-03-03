@@ -36,7 +36,7 @@ export const HeroSection: React.FC = () => {
 
         {/* Subtitle */}
         <p className="text-light/50 text-sm md:text-base max-w-md leading-relaxed mt-2">
-          Producción técnica integral y alquiler de equipos de alta fidelidad
+          Producción técnica, integral y alquiler de equipos de alta fidelidad
           para los eventos más exigentes.
         </p>
 

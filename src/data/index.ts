@@ -1,68 +1,70 @@
 import type { Combo, EventItem } from "@/data/types";
+import { getCDNUrl } from "@/app/api/lib/cdn";
 
 // Re-export types for convenience
 export type { Combo, ComboEquipment, ComboSpec, EventItem } from "@/data/types";
 
 // ─── Combos ──────────────────────────────────────────────────────────────────
+//
+// Images are fetched from S3/CDN bucket.
+// Fallback: `imagePlaceholder` (CSS gradient) when image fails to load.
 
 export const combos: Combo[] = [
   {
-    id: "premium-club",
-    badge: "PRO",
-    title: "Combo Pioneer V10 + CDJ3000",
-    subtitle: "Premium Club Bundle",
+    id: "setup-pioneer",
+    title: "Setup Pioneer",
     description:
       "El estándar de oro de la industria. Sonido de alta fidelidad sin compromisos para los escenarios más grandes del mundo.",
     imagePlaceholder: "from-secondary to-dark-deeper",
+    image: getCDNUrl("combos/setup-pioneer.webp"),
     equipment: [
       {
-        name: "1x Pioneer DJM-V10",
+        name: "1x MIXER V10 LF",
         description:
-          "Professional 6-channel flagship mixer with elite sound quality and 32-bit converters.",
+          "Mezcladora profesional de 6 canales con EQ de 4 bandas, convertidores A/D-D/A de 32 bits y 96kHz de muestreo.",
       },
       {
         name: "2x CDJ-3000",
         description:
-          "Industry standard multi players with high res 9\" touch screens and MPU technology.",
+          "Multireproductor profesional con pantalla táctil HD de 9\", MPU avanzada, Key Sync/Shift y Pro DJ Link Gigabit.",
       },
       {
-        name: "2x Wharfedale Pro TOURUS-AX15",
+        name: "1 RMX 1000",
         description:
-          "High performance active speakers, 900W peak, fanless design with titanium drivers.",
+          "Estación de efectos profesional para DJ con procesamiento DSP de alta resolución, integración plug-in VST/AU y total compatibilidad con mixers y CDJ mediante conexión MIDI y USB.",
       },
     ],
-    specs: [
-      { label: "Audio Processing", value: "32-bit", sub: "96kHz" },
-      { label: "Max Output", value: "900W", sub: "Peak" },
-      { label: "Connectivity", value: "Pro Link", sub: "Gigabit" },
-      { label: "Control", value: "6-Ch", sub: "Mixer" },
-      { label: "Weight", value: "~1.0kg", sub: "RMX unit" },
-      { label: "Total", value: "45kg", sub: "Full rig" },
-    ],
+      specs: [
+        { label: "Audio Resolution", value: "32-bit A/D & D/A", sub: "Mixer & Players" },
+        { label: "Sampling Rate", value: "96 kHz", sub: "Mixer Processing" },
+        { label: "Player Output Quality", value: "115 dB S/N", sub: "CDJ-3000" },
+        { label: "Effect Processing", value: "24-bit/48 kHz", sub: "RMX-1000 FX Unit" },
+        { label: "Channels / Control", value: "6-Ch", sub: "Mixer" },
+        { label: "Display", value: "9″ HD Touch", sub: "CDJ-3000" },
+      ],
   },
   {
     id: "sonido-pro",
-    badge: "FULL PRODUCTION",
-    title: "Sistema de Sonido Pro",
-    subtitle: "Pro Sound System",
+    title: "Sonido PRO de alta fidelidad",
     description:
       "Potencia y claridad inigualable con Wharfedale Pro. Cobertura acústica perfecta para cualquier aforo de 100 a 200 personas.",
     imagePlaceholder: "from-dark-deeper to-secondary/50",
+    image: getCDNUrl("combos/sonido.webp"),
     equipment: [
       {
         name: "2x TOURUS-AX15-MBT",
         description:
-          "Bi-amplified active 15\" speakers, 900W peak, Bluetooth & TWS, fanless cooling.",
+          "Altavoces bi-amplificados activos 15\" de 2 vías, 900W pico, diseño fanless y conectividad Bluetooth/TWS.",
       },
       {
         name: "1x T-Sub-AX15B",
         description:
-          "Active 15\" subwoofer, 1400W peak, birch plywood cabinet with Tough-Tone finish.",
+          "Subwoofer activo 15\", 1400W pico, gabinete de contrachapado de abedul 15mm con pintura Tough-Tone y Clase D.",
       },
       {
         name: "2x Samsung Sound Tower MX-T50",
         description:
-          "500W bi-directional DJ booth speakers with Bass Booster technology.",
+          "Altavoces bidireccionales de 500W para cabina de DJ con tecnología Bass Booster y diseño ergonómico.",
       },
     ],
     specs: [
@@ -74,45 +76,29 @@ export const combos: Combo[] = [
       { label: "Cooling", value: "Fanless", sub: "Convection" },
     ],
   },
-  {
-    id: "alphatheta",
-    badge: "NEXT-GEN",
-    title: "Setup AlphaTheta Next-Gen",
-    subtitle: "Full Production Setup",
+{
+    id: "pantalla-led",
+    title: "PANTALLA LED 6M2",
     description:
-      "La última tecnología para tu evento. Innovación y diseño al servicio de la creatividad más vanguardista con visuales LED de 6m².",
+      "Pantalla LED de alta definición de 6 m² con pixel pitch 3.91 mm, elevadas tasas de refresco para imágenes fluidas, diseño modular y resistencia IP65 para usos en interiores y exteriores.",
     imagePlaceholder: "from-primary/10 to-dark-deeper",
+    image: getCDNUrl("combos/alphatheta.webp"),
     equipment: [
-      {
-        name: "1x Pioneer DJM-V10",
-        description:
-          "6-channel mixer with 4-band EQ, Beat FX, 96kHz sampling rate.",
-      },
-      {
-        name: "2x CDJ-3000",
-        description:
-          "Advanced multi players with Key Sync, Touch Preview and Gigabit Ethernet.",
-      },
-      {
-        name: "1x RMX-1000",
-        description:
-          "3-in-1 effects & sampler unit: Scene FX, Isolator FX, X-Pad with Pitch Shift.",
-      },
       {
         name: "Pantalla LED 6m²",
         description:
-          "12 modules, pixel pitch 3.91mm, IP65, 1920-7860Hz refresh rate, HD/Full HD/4K.",
+          "Display LED modular de 6 metros cuadrados con pixel pitch 3.91 mm, paneles SMD de alta densidad, protección IP65 para exteriores, alto brillo y compatibilidad con diversas fuentes de video.",
       },
     ],
     specs: [
-      { label: "Visual", value: "6m²", sub: "LED Screen" },
-      { label: "Pixel Pitch", value: "3.91mm", sub: "IP65" },
-      { label: "Refresh", value: "7860Hz", sub: "Anti-flicker" },
-      { label: "Resolution", value: "4K", sub: "Large format" },
-      { label: "Lighting", value: "DMX 512", sub: "Controller" },
-      { label: "FX Units", value: "10+", sub: "Fixtures" },
+      { label: "Pixel Pitch", value: "3.91 mm", sub: "Density ~65 536 px/m²" },
+      { label: "Refresh Rate", value: "≥3 840 Hz", sub: "Flicker-free display" },
+      { label: "Brightness", value: "≥5 000 nits", sub: "Outdoor ready" },
+      { label: "Viewing Angle", value: "140°/140°", sub: "H/V" },
+      { label: "Ingress Protection", value: "IP65", sub: "Front/Outdoor" },
+      { label: "Lifetime", value: "≥100 000 h", sub: "LED lifespan" },
     ],
-  },
+  }
 ];
 
 // ─── Events ──────────────────────────────────────────────────────────────────
@@ -120,42 +106,26 @@ export const combos: Combo[] = [
 export const events: EventItem[] = [
   {
     id: "neon-fest",
-    type: "Live Event",
-    title: "Neon Summer Fest",
-    description: "Festival al aire libre con sistema de sonido completo y pantalla LED.",
+    title: "Evento en Agrelo",
     imagePlaceholder: "from-primary/20 via-dark to-secondary",
-    span: "wide",
+    image: getCDNUrl("eventos/evento-1/evento-1_1.webp"),
   },
   {
     id: "skyline",
-    type: "Corporate",
-    title: "Skyline Executive Event",
-    description: "Producción integral para evento corporativo de alto nivel.",
+    title: "Cumpleaños en Guaymallén",
     imagePlaceholder: "from-secondary via-dark-deeper to-primary/10",
-    span: "normal",
+    image: getCDNUrl("eventos/evento-2/evento-2_1.webp"),
   },
   {
     id: "techno",
-    type: "Club Night",
-    title: "Techno Warehouse Session",
-    description: "Setup Pioneer V10 + CDJ3000 para noche de club underground.",
+    title: "Evento en café - bar Coordenadas en Potrerillos",
     imagePlaceholder: "from-dark-deeper to-dark",
-    span: "normal",
+    image: getCDNUrl("eventos/evento-3/evento-3_1.webp"),
   },
   {
-    id: "innovation",
-    type: "Corporate",
-    title: "Global Innovation Expo",
-    description: "Sonido y visuales para exposición internacional.",
-    imagePlaceholder: "from-secondary/80 to-dark-deeper",
-    span: "normal",
-  },
-  {
-    id: "birthday",
-    type: "Party",
-    title: "Elite Birthday Celebration",
-    description: "Experiencia sonora completa para celebración privada.",
-    imagePlaceholder: "from-primary/15 to-secondary",
-    span: "normal",
+    id: "tuki",
+    title: "Cumpleaños en Godoy Cruz",
+    imagePlaceholder: "from-dark-deeper to-dark",
+    image: getCDNUrl("eventos/evento-4/evento-4_1.webp"),
   },
 ];

@@ -1,6 +1,23 @@
-import { redirect } from "next/navigation";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { CombosSection } from "@/components/sections/CombosSection";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { EventsSection } from "@/components/sections/EventsSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
-// ─── Main Page ────────────────────────────────────────────────────────────────
-export default function ComingSoonPage() {
-  redirect("/proximamente");
+export default function Home() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <CombosSection />
+        <EventsSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </>
+  );
 }

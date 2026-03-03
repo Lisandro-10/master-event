@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -76,7 +77,7 @@ export const metadata: Metadata = {
       "Alquiler de equipos Pioneer DJ, sonido Wharfedale Pro, iluminación DMX y pantalla LED. Producción técnica integral para eventos en Mendoza.",
     images: [
       {
-        url: "/logo-full-resize.png",
+        url: "/logo-resize.png",
         width: 1200,
         height: 630,
         alt: "Master Event Mendoza — Más que música, una experiencia inolvidable",
@@ -89,7 +90,7 @@ export const metadata: Metadata = {
     title: "Master Event | Sonido, DJ y Luces para Eventos en Mendoza",
     description:
       "Producción técnica integral en Mendoza. Pioneer CDJ-3000, Wharfedale Pro, luces DMX y pantalla LED para tu evento.",
-    images: ["/logo-full-resize.png"],
+    images: ["/logo-resize.png"],
   },
 
   robots: {
@@ -118,6 +119,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <FloatingWhatsApp phoneNumber="5492617523497"/>
       </body>
     </html>
   );

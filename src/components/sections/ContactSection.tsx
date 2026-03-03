@@ -13,17 +13,35 @@ export const ContactSection: React.FC = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setSuccess(true);
+      setFormData({ name: "", email: "", phone: "", eventType: "", message: "" });
+    } catch {
+      alert("Error al enviar. Intentá de nuevo.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: connect to API/email service
-    console.log("Form submitted:", formData);
-    alert("¡Gracias! Te contactamos en menos de 24 horas.");
   };
 
   const inputBase =
@@ -44,7 +62,8 @@ export const ContactSection: React.FC = () => {
             <span className="text-primary">Evento?</span>
           </h2>
           <p className="text-light/40 text-sm max-w-sm leading-relaxed">
-            Nuestro equipo técnico está listo para asesorarte en menos de 24 horas.
+            Nuestro equipo técnico está listo para asesorarte.
+            Servicio puerta a puerta e instalación in situ.
           </p>
         </div>
 
@@ -85,45 +104,6 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Phone + Event type row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-1.5">
-              <label className="text-light/50 text-xs font-semibold uppercase tracking-widest">
-                Celular
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="+54 9..."
-                value={formData.phone}
-                onChange={handleChange}
-                className={inputBase}
-              />
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <label className="text-light/50 text-xs font-semibold uppercase tracking-widest">
-                Tipo de Evento
-              </label>
-              <select
-                name="eventType"
-                value={formData.eventType}
-                onChange={handleChange}
-                className={`${inputBase} appearance-none`}
-              >
-                <option value="" disabled>
-                  Seleccioná...
-                </option>
-                <option value="bodega">Bodega / Salón</option>
-                <option value="club">Bar / Pub / Club</option>
-                <option value="cumpleanos">Cumpleaños</option>
-                <option value="casamiento">Casamiento</option>
-                <option value="corporativo">Corporativo</option>
-                <option value="festival">Festival</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
-          </div>
-
           {/* Message */}
           <div className="flex flex-col gap-1.5">
             <label className="text-light/50 text-xs font-semibold uppercase tracking-widest">
@@ -139,8 +119,8 @@ export const ContactSection: React.FC = () => {
             />
           </div>
 
-          <Button type="submit" size="lg" className="w-full mt-2">
-            Enviar Mensaje ↗
+          <Button type="submit" size="lg" className="w-full mt-2" disabled={loading}>
+            {loading ? "Enviando..." : success ? "¡Mensaje enviado!" : "Enviar Mensaje"}
           </Button>
         </form>
       </div>
