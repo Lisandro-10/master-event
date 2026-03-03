@@ -13,7 +13,6 @@ export const combos: Combo[] = [
   {
     id: "setup-pioneer",
     title: "Setup Pioneer",
-    subtitle: "Premium Club Bundle",
     description:
       "El estándar de oro de la industria. Sonido de alta fidelidad sin compromisos para los escenarios más grandes del mundo.",
     imagePlaceholder: "from-secondary to-dark-deeper",
@@ -47,7 +46,6 @@ export const combos: Combo[] = [
   {
     id: "sonido-pro",
     title: "Sonido PRO de alta fidelidad",
-    subtitle: "Pro Sound System",
     description:
       "Potencia y claridad inigualable con Wharfedale Pro. Cobertura acústica perfecta para cualquier aforo de 100 a 200 personas.",
     imagePlaceholder: "from-dark-deeper to-secondary/50",
@@ -81,7 +79,6 @@ export const combos: Combo[] = [
 {
     id: "pantalla-led",
     title: "PANTALLA LED 6M2",
-    subtitle: "Full Visual Production Setup",
     description:
       "Pantalla LED de alta definición de 6 m² con pixel pitch 3.91 mm, elevadas tasas de refresco para imágenes fluidas, diseño modular y resistencia IP65 para usos en interiores y exteriores.",
     imagePlaceholder: "from-primary/10 to-dark-deeper",
@@ -109,29 +106,25 @@ export const combos: Combo[] = [
 export const events: EventItem[] = [
   {
     id: "neon-fest",
-    title: "Neon Summer Fest",
-    description: "Festival al aire libre con sistema de sonido completo y pantalla LED.",
+    title: "Evento en Agrelo",
     imagePlaceholder: "from-primary/20 via-dark to-secondary",
     image: getCDNUrl("eventos/evento-1/evento-1_1.webp"),
   },
   {
     id: "skyline",
-    title: "Skyline Executive Event",
-    description: "Producción integral para evento corporativo de alto nivel.",
+    title: "Cumpleaños en Guaymallén",
     imagePlaceholder: "from-secondary via-dark-deeper to-primary/10",
     image: getCDNUrl("eventos/evento-2/evento-2_1.webp"),
   },
   {
     id: "techno",
-    title: "Techno Warehouse Session",
-    description: "Setup Pioneer V10 + CDJ3000 para noche de club underground.",
+    title: "Evento en café - bar Coordenadas en Potrerillos",
     imagePlaceholder: "from-dark-deeper to-dark",
     image: getCDNUrl("eventos/evento-3/evento-3_1.webp"),
   },
   {
     id: "tuki",
-    title: "Tuki Event",
-    description: "Evento especial con setups premium.",
+    title: "Cumpleaños en Godoy Cruz",
     imagePlaceholder: "from-dark-deeper to-dark",
     image: getCDNUrl("eventos/evento-4/evento-4_1.webp"),
   },

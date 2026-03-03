@@ -54,7 +54,6 @@ interface EventCardProps {
   event: EventItem;
   className?: string;
   style?: React.CSSProperties;
-  showDescription?: boolean;
   titleSize?: "sm" | "lg" | "xl";
   onClick?: () => void;
 }
@@ -63,7 +62,6 @@ const EventCard: React.FC<EventCardProps> = ({
   event,
   className = "",
   style,
-  showDescription = false,
   titleSize = "sm",
   onClick,
 }) => {
@@ -123,11 +121,6 @@ const EventCard: React.FC<EventCardProps> = ({
         <h3 className={`text-light font-bold leading-tight ${titleClasses[titleSize]}`}>
           {event.title}
         </h3>
-        {showDescription && (
-          <p className="text-light/50 text-xs leading-relaxed line-clamp-2">
-            {event.description}
-          </p>
-        )}
       </div>
     </div>
   );
@@ -140,7 +133,7 @@ type LayoutProps = { items: EventItem[]; onOpen: (e: EventItem) => void };
 function Layout1({ items, onOpen }: LayoutProps) {
   return (
     <div style={{ height: 420 }}>
-      <EventCard event={items[0]} className="h-full" showDescription titleSize="xl" onClick={() => onOpen(items[0])} />
+      <EventCard event={items[0]} className="h-full" titleSize="xl" onClick={() => onOpen(items[0])} />
     </div>
   );
 }
@@ -148,7 +141,7 @@ function Layout1({ items, onOpen }: LayoutProps) {
 function Layout2({ items, onOpen }: LayoutProps) {
   return (
     <div className="grid grid-cols-2 gap-4" style={{ height: 420 }}>
-      <EventCard event={items[0]} className="h-full" showDescription titleSize="lg" onClick={() => onOpen(items[0])} />
+      <EventCard event={items[0]} className="h-full" titleSize="lg" onClick={() => onOpen(items[0])} />
       <EventCard event={items[1]} className="h-full" titleSize="lg" onClick={() => onOpen(items[1])} />
     </div>
   );
@@ -157,7 +150,7 @@ function Layout2({ items, onOpen }: LayoutProps) {
 function Layout3({ items, onOpen }: LayoutProps) {
   return (
     <div className="grid grid-cols-3 gap-4" style={{ height: 420 }}>
-      <EventCard event={items[0]} className="col-span-2 h-full" showDescription titleSize="xl" onClick={() => onOpen(items[0])} />
+      <EventCard event={items[0]} className="col-span-2 h-full" titleSize="xl" onClick={() => onOpen(items[0])} />
       <div className="grid grid-rows-2 gap-4">
         <EventCard event={items[1]} className="h-full" titleSize="sm" onClick={() => onOpen(items[1])} />
         <EventCard event={items[2]} className="h-full" titleSize="sm" onClick={() => onOpen(items[2])} />
@@ -173,7 +166,7 @@ function Layout4({ items, onOpen }: LayoutProps) {
         event={items[0]}
         className="row-span-2 h-full"
         style={{ gridRow: "1 / span 2" }}
-        showDescription
+      
         titleSize="xl"
         onClick={() => onOpen(items[0])}
       />
@@ -200,7 +193,7 @@ function LayoutMany({ items, onOpen }: LayoutProps) {
       className="grid grid-cols-3 gap-4"
       style={{ height: totalHeight, gridTemplateRows: `repeat(${totalRows}, ${ROW_H}px)` }}
     >
-      <EventCard event={featured} style={{ gridColumn: "1 / span 2", gridRow: "1 / span 1" }} showDescription titleSize="xl" onClick={() => onOpen(featured)} />
+      <EventCard event={featured} style={{ gridColumn: "1 / span 2", gridRow: "1 / span 1" }} titleSize="xl" onClick={() => onOpen(featured)} />
       <EventCard event={tall} style={{ gridColumn: "3", gridRow: `1 / span ${totalRows}` }} titleSize="lg" onClick={() => onOpen(tall)} />
       {rows.map((pair, rowIdx) =>
         pair.length === 1 ? (
