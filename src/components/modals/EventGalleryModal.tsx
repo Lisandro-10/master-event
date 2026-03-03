@@ -64,6 +64,8 @@ const EqualizerLoader: React.FC<{ size?: "sm" | "md"; label?: string }> = ({
 
 // ─── Video Slide ──────────────────────────────────────────────────────────────
 
+// En EventGalleryModal.tsx — reemplazar el componente VideoSlide completo:
+
 const VideoSlide: React.FC<{ item: GalleryMedia; isActive: boolean }> = ({
   item,
   isActive,
@@ -87,7 +89,7 @@ const VideoSlide: React.FC<{ item: GalleryMedia; isActive: boolean }> = ({
     return () => { if (slowTimerRef.current) clearTimeout(slowTimerRef.current); };
   }, [isActive]);
 
-  const handleCanPlay = () => {
+  const clearLoading = () => {
     setLoading(false);
     setSlowConnection(false);
     if (slowTimerRef.current) clearTimeout(slowTimerRef.current);
@@ -102,9 +104,11 @@ const VideoSlide: React.FC<{ item: GalleryMedia; isActive: boolean }> = ({
         controls
         playsInline
         preload="metadata"
-        onCanPlay={handleCanPlay}
+        onLoadedMetadata={clearLoading}
+        onLoadedData={clearLoading}
+        onCanPlay={clearLoading}
         onWaiting={() => setLoading(true)}
-        onPlaying={() => setLoading(false)}
+        onPlaying={clearLoading}
         className={`max-w-full max-h-full w-full h-full object-contain transition-opacity duration-500 ${
           loading ? "opacity-0" : "opacity-100"
         }`}
