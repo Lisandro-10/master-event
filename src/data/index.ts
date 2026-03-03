@@ -49,7 +49,7 @@ export const combos: Combo[] = [
     description:
       "Potencia y claridad inigualable con Wharfedale Pro. Cobertura acústica perfecta para cualquier aforo de 100 a 200 personas.",
     imagePlaceholder: "from-dark-deeper to-secondary/50",
-    image: getCDNUrl("combos/sonido-pro.webp"),
+    image: getCDNUrl("combos/sonido.webp"),
     equipment: [
       {
         name: "2x TOURUS-AX15-MBT",

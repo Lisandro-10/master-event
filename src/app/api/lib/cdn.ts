@@ -79,3 +79,20 @@ export function getComboImageUrl(comboId: string): string {
 export function getLogoUrl(): string {
   return getCDNUrl('logo.png')
 }
+
+// ─── Image Strategy Helpers ───────────────────────────────────────────────────
+
+/**
+ * Determina si una URL corresponde a un asset de evento.
+ * Los assets de eventos se sirven directo desde S3 sin pasar por el
+ * optimizador de Vercel, ya que:
+ *  - Ya están en .webp (conversión no necesaria)
+ *  - Se agregan frecuentemente (URLs nuevas = sin stale cache)
+ *  - Si se reemplazan, se usa nombre distinto (hero-v2.webp)
+ *
+ * Esto preserva las 5K transformaciones gratuitas de Vercel
+ * para assets verdaderamente estáticos (combos, logo, brand).
+ */
+export function isEventAsset(url: string): boolean {
+  return url.includes('/eventos/')
+}
