@@ -82,7 +82,7 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
           <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent" />
           <div className="relative flex flex-col gap-1 z-10">
             <h2 className="text-light font-black text-lg md:text-xl leading-tight">
-              {combo.subtitle}
+              {combo.title}
             </h2>
           </div>
 

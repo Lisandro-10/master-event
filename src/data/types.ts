@@ -14,7 +14,6 @@ export interface ComboSpec {
 export interface Combo {
   id: string;
   title: string;
-  subtitle: string;
   description: string;
   imagePlaceholder: string;
   /**
@@ -31,7 +30,6 @@ export interface Combo {
 export interface EventItem {
   id: string;
   title: string;
-  description: string;
   imagePlaceholder: string;
   image?: string;
 }
