@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { ComboModal } from "@/components/modals/ComboModal";
 import { BsArrowRight } from "react-icons/bs";
 import { BiInfoCircle } from "react-icons/bi";
+import { isCDNAsset } from "@/app/api/lib/cdn";
 
 const ComboCard: React.FC<{ combo: Combo; onOpen: (c: Combo) => void }> = ({
   combo,
@@ -28,6 +29,7 @@ const ComboCard: React.FC<{ combo: Combo; onOpen: (c: Combo) => void }> = ({
             src={combo.image}
             alt={combo.title}
             fill
+            unoptimized={isCDNAsset(combo.image)}
             className="object-cover"
             onError={() => setImgError(true)}
             sizes="(max-width: 768px) 100vw, 33vw"

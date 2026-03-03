@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { getCDNUrl } from "@/app/api/lib/cdn";
+import { isCDNAsset } from "@/app/api/lib/cdn";
 
 const navLinks = [
   { label: "Combos", href: "#combos" },
@@ -15,6 +16,7 @@ const navLinks = [
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const logoUrl = getCDNUrl("logo.png");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -41,8 +43,9 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2 z-10">
             <Image
-              src={getCDNUrl("logo.png")}
+              src={logoUrl}
               alt="Master Event"
+              unoptimized={isCDNAsset(logoUrl)}
               width={64}
               height={64}
               className="object-contain"

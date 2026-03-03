@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import type { Combo } from "@/data/types";
 import { HiXMark } from "react-icons/hi2";
+import { isCDNAsset } from "@/app/api/lib/cdn";
 
 interface ComboModalProps {
   combo: Combo | null;
@@ -64,6 +65,7 @@ export const ComboModal: React.FC<ComboModalProps> = ({ combo, onClose }) => {
               src={combo.image}
               alt={combo.title}
               fill
+              unoptimized={isCDNAsset(combo.image)}
               className="object-cover"
               onError={() => setImgError(true)}
               sizes="(max-width: 768px) 100vw, 50vw"

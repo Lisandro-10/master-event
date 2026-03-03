@@ -7,7 +7,7 @@ import type { EventItem } from "@/data/types";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { EventGalleryModal } from "@/components/modals/EventGalleryModal";
 import { useEventMedia } from "@/hooks/useEventMedia";
-import { isEventAsset } from "@/app/api/lib/cdn";
+import { isCDNAsset } from "@/app/api/lib/cdn";
 
 // ─── Helper: extract event number from EventItem ───────────────────────────────
 //
@@ -88,7 +88,7 @@ const EventCard: React.FC<EventCardProps> = ({
           src={event.image}
           alt={event.title}
           fill
-          unoptimized={isEventAsset(event.image)}
+          unoptimized={isCDNAsset(event.image)}
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           onError={() => setImgError(true)}
           sizes="(max-width: 768px) 100vw, 50vw"

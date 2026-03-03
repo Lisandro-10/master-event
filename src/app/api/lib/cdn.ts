@@ -80,19 +80,20 @@ export function getLogoUrl(): string {
   return getCDNUrl('logo.png')
 }
 
+
 // ─── Image Strategy Helpers ───────────────────────────────────────────────────
 
 /**
- * Determina si una URL corresponde a un asset de evento.
- * Los assets de eventos se sirven directo desde S3 sin pasar por el
- * optimizador de Vercel, ya que:
- *  - Ya están en .webp (conversión no necesaria)
- *  - Se agregan frecuentemente (URLs nuevas = sin stale cache)
- *  - Si se reemplazan, se usa nombre distinto (hero-v2.webp)
+ * Todo asset que venga del CDN (S3) ya está en .webp optimizado.
+ * No tiene sentido pasar por el optimizer de Vercel:
+ *  - Consume las 5K transformaciones gratuitas
+ *  - No hay ganancia de formato (ya es webp)
+ *  - Stale cache si se reemplaza con mismo nombre
  *
- * Esto preserva las 5K transformaciones gratuitas de Vercel
- * para assets verdaderamente estáticos (combos, logo, brand).
+ * Retorna true para cualquier URL que apunte al CDN configurado.
+ * Las imágenes locales (/public) siguen usando el optimizer normalmente.
  */
-export function isEventAsset(url: string): boolean {
-  return url.includes('/eventos/')
+export function isCDNAsset(url: string): boolean {
+  if (!CDN_URL) return false
+  return url.startsWith(CDN_URL) || url.includes('/eventos/') || url.includes('/combos/')
 }
