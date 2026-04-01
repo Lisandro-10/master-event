@@ -34,14 +34,14 @@ export const combos: Combo[] = [
           "Estación de efectos profesional para DJ con procesamiento DSP de alta resolución, integración plug-in VST/AU y total compatibilidad con mixers y CDJ mediante conexión MIDI y USB.",
       },
     ],
-      specs: [
-        { label: "Audio Resolution", value: "32-bit A/D & D/A", sub: "Mixer & Players" },
-        { label: "Sampling Rate", value: "96 kHz", sub: "Mixer Processing" },
-        { label: "Player Output Quality", value: "115 dB S/N", sub: "CDJ-3000" },
-        { label: "Effect Processing", value: "24-bit/48 kHz", sub: "RMX-1000 FX Unit" },
-        { label: "Channels / Control", value: "6-Ch", sub: "Mixer" },
-        { label: "Display", value: "9″ HD Touch", sub: "CDJ-3000" },
-      ],
+    specs: [
+      { label: "Audio Resolution", value: "32-bit A/D & D/A", sub: "Mixer & Players" },
+      { label: "Sampling Rate", value: "96 kHz", sub: "Mixer Processing" },
+      { label: "Player Output Quality", value: "115 dB S/N", sub: "CDJ-3000" },
+      { label: "Effect Processing", value: "24-bit/48 kHz", sub: "RMX-1000 FX Unit" },
+      { label: "Channels / Control", value: "6-Ch", sub: "Mixer" },
+      { label: "Display", value: "9″ HD Touch", sub: "CDJ-3000" },
+    ],
   },
   {
     id: "sonido-pro",
@@ -76,7 +76,7 @@ export const combos: Combo[] = [
       { label: "Cooling", value: "Fanless", sub: "Convection" },
     ],
   },
-{
+  {
     id: "pantalla-led",
     title: "PANTALLA LED 6M2",
     description:
@@ -123,9 +123,9 @@ export const events: EventItem[] = [
     image: getCDNUrl("eventos/evento-3/evento-3_1.webp"),
   },
   {
-    id: "tuki",
-    title: "Cumpleaños en Godoy Cruz",
+    id: "savana",
+    title: "Savana Community",
     imagePlaceholder: "from-dark-deeper to-dark",
-    image: getCDNUrl("eventos/evento-4/evento-4_1.webp"),
+    image: getCDNUrl("eventos/evento-4/evento-4_2.webp"),
   },
 ];
