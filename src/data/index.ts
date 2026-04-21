@@ -128,4 +128,10 @@ export const events: EventItem[] = [
     imagePlaceholder: "from-dark-deeper to-dark",
     image: getCDNUrl("eventos/evento-4/evento-4_2.webp"),
   },
+  {
+    id: "lulunta",
+    title: "Evento Lulunta",
+    imagePlaceholder: "from-dark-deeper to-dark",
+    image: getCDNUrl("eventos/evento-5/evento-5_2.webp"),
+  },
 ];
