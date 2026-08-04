@@ -134,4 +134,10 @@ export const events: EventItem[] = [
     imagePlaceholder: "from-dark-deeper to-dark",
     image: getCDNUrl("eventos/evento-5/evento-5_2.webp"),
   },
+    {
+    id: "jean-bousquet",
+    title: "Bodega Jean Bousquet",
+    imagePlaceholder: "from-dark-deeper to-dark",
+    image: getCDNUrl("eventos/evento-6/evento-6_3.webp"),
+  },
 ];
